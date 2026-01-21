@@ -1,0 +1,41 @@
+<div class="page-container">
+<h2>Category Master</h2>
+
+<div class="form">
+  <input
+    [(ngModel)]="categoryName"
+    placeholder="Enter category name"
+  />
+  <button
+  class="btn"
+  [ngClass]="editId !== null ? 'btn-update' : 'btn-add'"
+  (click)="saveCategory()"
+>
+  {{ editId !== null ? 'Update' : 'Add' }}
+</button>
+
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Category Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let c of categories">
+      <td>{{ c.categoryId }}</td>
+      <td>{{ c.CategoryName }}</td>
+      <td>
+        <button class="btn btn-edit" (click)="edit(c)">Edit</button>
+        <button class="btn btn-delete" (click)="delete(c.categoryId)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

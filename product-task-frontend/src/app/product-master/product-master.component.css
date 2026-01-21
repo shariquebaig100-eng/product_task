@@ -1,0 +1,78 @@
+.page-container{
+    padding: 24px 32px;
+    margin: auto;
+}
+.form {
+  margin-bottom: 15px;
+}
+
+input, select {
+  padding: 6px;
+  margin-right: 5px;
+}
+
+button {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+th {
+  background: #f5f5f5;
+}
+
+button.danger {
+  background: #e74c3c;
+  color: white;
+}
+
+.pagination {
+  margin-top: 10px;
+}
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 6px;
+  transition: background-color 0.2s ease;
+  color: #fff;
+}
+
+.btn-add {
+  background-color: #28a745;
+}
+.btn-add:hover {
+  background-color: #218838;
+}
+
+.btn-update {
+  background-color: #007bff;
+}
+.btn-update:hover {
+  background-color: #0069d9;
+}
+
+.btn-edit {
+  background-color: #17a2b8;
+}
+.btn-edit:hover {
+  background-color: #138496;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+}
+.btn-delete:hover {
+  background-color: #c82333;
+}

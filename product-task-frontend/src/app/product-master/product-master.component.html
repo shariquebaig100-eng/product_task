@@ -1,0 +1,54 @@
+<div class="page-container">
+    <h2>Product Master</h2>
+
+    <div class="form">
+        <input [(ngModel)]="productName" placeholder="Product Name" />
+
+        <select [(ngModel)]="categoryId">
+            <option [ngValue]="0">Select Category</option>
+
+            <option *ngFor="let c of categories" [ngValue]="c.categoryId">
+                {{ c.CategoryName }}
+            </option>
+        </select>
+
+
+        <button class="btn" [ngClass]="editId !== null ? 'btn-update' : 'btn-add'" (click)="saveProduct()">
+            {{ editId !== null ? 'Update Product' : 'Add Product' }}
+        </button>
+
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ProductId</th>
+                <th>ProductName</th>
+                <th>CategoryId</th>
+                <th>CategoryName</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let p of products">
+                <td>{{ p.ProductId }}</td>
+                <td>{{ p.ProductName }}</td>
+                <td>{{ p.CategoryId }}</td>
+                <td>{{ p.CategoryName }}</td>
+                <td>
+                    <button class="btn btn-edit" (click)="edit(p)">Edit</button>
+                    <button class="btn btn-delete" (click)="delete(p.ProductId)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <button (click)="prev()">Prev</button>
+        <span>Page {{ page }}</span>
+        <button (click)="next()">Next</button>
+    </div>
+</div>
