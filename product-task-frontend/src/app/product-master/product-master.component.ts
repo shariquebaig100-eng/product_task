@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef } from '@angular/core';
 import { ToastService } from '../services/toast.service';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment.prod';
 @Component({
   selector: 'app-product-master',
   standalone: true,
