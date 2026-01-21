@@ -28,7 +28,7 @@
   <tbody>
     <tr *ngFor="let c of categories">
       <td>{{ c.categoryId }}</td>
-      <td>{{ c.CategoryName }}</td>
+      <td>{{ c.categoryName }}</td>
       <td>
         <button class="btn btn-edit" (click)="edit(c)">Edit</button>
         <button class="btn btn-delete" (click)="delete(c.categoryId)">

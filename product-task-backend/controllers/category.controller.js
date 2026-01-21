@@ -1,10 +1,16 @@
 const db = require("../config/db");
 
 exports.getCategories = (req, res) => {
-  db.query("SELECT * FROM categories", (err, result) => {
-    if (err) return res.status(500).json({ message: 'Internal server error' });
-    res.json(result);
-  });
+  db.query(
+    `SELECT 
+      CategoryId AS categoryId,
+      CategoryName AS categoryName
+     FROM categories`,
+    (err, result) => {
+      if (err) return res.status(500).json({ message: 'DB error' });
+      res.json(result);
+    }
+  );
 };
 
 exports.createCategory = (req, res) => {

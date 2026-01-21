@@ -84,7 +84,7 @@ export class CategoryMasterComponent implements OnInit {
 
   edit(cat: any) {
     this.editId = cat.categoryId;   
-    this.categoryName = cat.CategoryName;
+    this.categoryName = cat.categoryName;
   }
 
   delete(id: number) {
