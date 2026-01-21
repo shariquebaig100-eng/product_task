@@ -8,7 +8,7 @@ const productRoutes = require("./routes/product.routes");
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:4200', "https://product-task-8smefssr7-sharique-baigs-projects.vercel.app"],
+  origin: ['http://localhost:4200', "https://product-task-8smefssr7-sharique-baigs-projects.vercel.app","https://product-task-mu.vercel.app"],
   credentials: true
 }));
 
