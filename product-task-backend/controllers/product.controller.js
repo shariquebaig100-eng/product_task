@@ -5,15 +5,16 @@ exports.getProducts = (req, res) => {
   const pageSize = parseInt(req.query.pageSize) || 10;
   const offset = (page - 1) * pageSize;
   const sql = `
-    SELECT
-      p.ProductId,
-      p.ProductName,
-      c.CategoryId,
-      c.CategoryName
-    FROM products p
-    JOIN categories c ON p.CategoryId = c.CategoryId
-    LIMIT ? OFFSET ?;
-  `;
+  SELECT
+    p.productId   AS ProductId,
+    p.productName AS ProductName,
+    c.categoryId  AS CategoryId,
+    c.categoryName AS CategoryName
+  FROM products p
+  JOIN categories c ON p.categoryId = c.categoryId
+  LIMIT ? OFFSET ?;
+`;
+
 
   db.query(sql, [pageSize, offset], (err, result) => {
     if (err) return res.status(500).json({ message: 'Internal server error' });
