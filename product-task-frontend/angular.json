@@ -3,13 +3,11 @@
   "version": 1,
   "cli": {
     "packageManager": "npm",
-    "analytics": "39773441-ad36-4ef3-988c-fb86fe7caf63"
+    "analytics": "7cfc9f9a-a7fb-44b0-9d00-d6dd51ac23e6"
   },
-  "newProjectRoot": "projects",
   "projects": {
     "product-task-frontend": {
       "projectType": "application",
-      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -32,6 +30,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.production.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -65,9 +69,6 @@
             }
           },
           "defaultConfiguration": "development"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test"
         }
       }
     }
