@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef } from '@angular/core';
 import { ToastService } from '../services/toast.service';
-import { environment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment.production';
 
 @Component({
   selector: 'app-category-master',
@@ -25,7 +25,7 @@ export class CategoryMasterComponent implements OnInit {
     private http: HttpClient,
     private cdr: ChangeDetectorRef,
     private toast: ToastService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.loadCategories();
@@ -83,7 +83,7 @@ export class CategoryMasterComponent implements OnInit {
   }
 
   edit(cat: any) {
-    this.editId = cat.categoryId;   
+    this.editId = cat.categoryId;
     this.categoryName = cat.categoryName;
   }
 

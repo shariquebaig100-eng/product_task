@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef } from '@angular/core';
 import { ToastService } from '../services/toast.service';
-import { environment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment.production';
 @Component({
   selector: 'app-product-master',
   standalone: true,
@@ -24,8 +24,8 @@ export class ProductMasterComponent implements OnInit {
   page = 1;
   pageSize = 10;
 
-productApi = `${environment.apiBaseUrl}/api/products`;
-categoryApi = `${environment.apiBaseUrl}/api/categories`;
+  productApi = `${environment.apiBaseUrl}/api/products`;
+  categoryApi = `${environment.apiBaseUrl}/api/categories`;
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef, private toast: ToastService) { }
 
@@ -40,7 +40,7 @@ categoryApi = `${environment.apiBaseUrl}/api/categories`;
         next: (res) => {
           this.categories = res;
         },
-         error: (err) => {
+        error: (err) => {
           this.toast.error(err?.error?.message || 'Failed to load categories');
         }
       });
@@ -56,8 +56,8 @@ categoryApi = `${environment.apiBaseUrl}/api/categories`;
         this.cdr.detectChanges();
       },
       error: (err) => {
-          this.toast.error(err?.error?.message || 'Failed to load products');
-        }
+        this.toast.error(err?.error?.message || 'Failed to load products');
+      }
     });
   }
 
