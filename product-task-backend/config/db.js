@@ -7,7 +7,10 @@ const db = mysql.createConnection({
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
-  port: process.env.PORT
+  port: process.env.PORT || 3306,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
 
@@ -19,4 +22,4 @@ db.connect((err) => {
   console.log("MySQL connected");
 });
 
-module.exports = db;
+module.exports = pool;
